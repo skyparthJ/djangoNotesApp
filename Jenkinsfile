@@ -29,7 +29,7 @@ pipeline {
             steps{
                  
                 sh "docker-compose down && docker-compose up -d"
-                echo "running containers"
+                echo "running container"
                  
             }
         }
