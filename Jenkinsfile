@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("code") {
             steps {
-                git url:"https://github.com/skyparthJ/djangoNotesApp.git",branch:"main"
+                //git url:"https://github.com/skyparthJ/djangoNotesApp.git",branch:"main"
                 echo "clone an image"
             }
         }
