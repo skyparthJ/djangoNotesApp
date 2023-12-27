@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+        SONAR_HOME= tool "Sonar"
+    }
     
     stages {
         stage("code") {
@@ -8,11 +11,12 @@ pipeline {
                 echo "clone an image"
             }
         }
-        stage('SonarQube Analysis') {
-            def scannerHome = tool 'SonarScanner';
-                withSonarQubeEnv() {
-                    sh "${scannerHome}/bin/sonar-scanner"
+        stage("SonarQube Analysis"){
+            steps{
+                withSonarQubeEnv("Sonar"){
+                    sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=jenkins -Dsonar.projectKey=jenkins"
                 }
+            }
         }
         stage("image-build"){
             steps{
