@@ -8,6 +8,12 @@ pipeline {
                 echo "clone an image"
             }
         }
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'SonarScanner';
+                withSonarQubeEnv() {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+        }
         stage("image-build"){
             steps{
                 sh "docker build -t appnotes:1.0 ."
