@@ -13,7 +13,7 @@ pipeline {
         }
         stage("SonarQube Analysis"){
             steps{
-                withSonarQubeEnv("Sonar"){
+                withSonarQubeEnv("sonarscanner"){
                     sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=jenkins -Dsonar.projectKey=jenkins"
                 }
             }
