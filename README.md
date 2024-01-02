@@ -87,3 +87,30 @@ df [disk usage info]
 du [calc size of directory]
 who [users logged in server/system]
 whoami [username]
+
+#minikube info
+ minikube start
+* minikube v1.32.0 on Microsoft Windows 11 Pro 10.0.22631.2861 Build 22631.2861
+* Automatically selected the docker driver
+* Using Docker Desktop driver with root privileges
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Downloading Kubernetes v1.28.3 preload ...
+    > gcr.io/k8s-minikube/kicbase...:  453.90 MiB / 453.90 MiB  100.00% 2.13 Mi
+* Creating docker container (CPUs=2, Memory=5000MB) ...
+! Executing "docker ps -a --format {{.Names}}" took an unusually long time: 3.2371818s
+* Restarting the docker service may improve performance.
+* Preparing Kubernetes v1.28.3 on Docker 24.0.7 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+
+! C:\Program Files\Docker\Docker\resources\bin\kubectl.exe is version 1.25.4, which may have incompatibilities with Kubernetes 1.28.3.
+  - Want kubectl v1.28.3? Try 'minikube kubectl -- get pods -A'
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+
